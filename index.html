@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mikael Brandt</title>
-<meta name="description" content="Mikael Brandt. Technical leader.">
-<meta name="theme-color" content="#17331f">
+<meta name="description" content="Mikael Brandt. Technical advisor to early-stage startups, one day a week.">
+<meta name="theme-color" content="#0b1a10">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +15,27 @@
 <body>
 <canvas id="rings" aria-hidden="true"></canvas>
 <main>
-  <h1>Technical leader.</h1>
-  <nav class="links" aria-label="Contact">
-    <a class="link" href="mailto:mikael@mikaelbrandt.com">mikael@mikaelbrandt.com</a>
-    <a class="link" href="https://www.linkedin.com/in/mikael-brandt/" rel="me">LinkedIn</a>
-  </nav>
+  <section class="you" aria-labelledby="you-title">
+    <h2 class="kicker" id="you-title">Is this you?</h2>
+    <ul class="checks">
+      <li style="--i: 0"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 5.5"/></svg><span>AI agents built most of your product.</span></li>
+      <li style="--i: 1"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 5.5"/></svg><span>You want to know your foundations will hold as you grow.</span></li>
+      <li style="--i: 2"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 5.5"/></svg><span>You want <span class="nowrap">battle-scarred</span> experience, just not five days a week.</span></li>
+    </ul>
+  </section>
+  <svg class="arrows" aria-hidden="true"></svg>
+  <section class="me" aria-labelledby="me-title">
+    <h2 class="kicker" id="me-title">This is me.</h2>
+    <h1>Technical advisor.</h1>
+    <p class="body">I join early-stage startups one day a week. You get senior engineering depth without a full-time hire, and your team keeps shipping with agents. I dig deep into your technical setup and help you make sure it holds up, not just for the next demo but for real users over the months and years ahead.</p>
+    <p class="offer">One day a week <span aria-hidden="true">·</span> €4,500 a month, ex. VAT</p>
+    <nav class="links" aria-label="Contact">
+      <a class="link" href="mailto:mikael@mikaelbrandt.com">mikael@mikaelbrandt.com</a>
+      <a class="link" href="https://www.linkedin.com/in/mikael-brandt/" rel="me">LinkedIn</a>
+    </nav>
+  </section>
 </main>
 <script src="rings.js"></script>
+<script src="arrows.js"></script>
 </body>
 </html>

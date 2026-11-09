@@ -46,8 +46,9 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     const narrow = w < 700;
-    cx = narrow ? w * 0.66 : w * 0.72;
-    cy = narrow ? h * 0.27 : h * 0.44;
+    // The pith sits in the empty top-right corner, clear of both text columns.
+    cx = w * 0.84;
+    cy = narrow ? h * 0.07 : h * 0.13;
     reach = Math.hypot(Math.max(cx, w - cx), Math.max(cy, h - cy)) * 1.05;
     const unit = Math.min(w, h) / (narrow ? 34 : 40);
 
