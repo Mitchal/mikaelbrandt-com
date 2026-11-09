@@ -35,7 +35,10 @@ main {
   min-height: 100dvh;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  /* Capped columns, centred as a pair, so wide screens don't leave the
+     right-hand side empty. */
+  grid-template-columns: minmax(0, 34rem) minmax(0, 36rem);
+  justify-content: center;
   column-gap: clamp(48px, 9vw, 160px);
   align-items: center;
   padding: max(clamp(32px, 6vh, 72px), env(safe-area-inset-top, 0px))
@@ -45,7 +48,7 @@ main {
 }
 
 .you { grid-column: 1; }
-.me { grid-column: 2; display: grid; gap: clamp(14px, 2.2vh, 22px); max-width: 36rem; }
+.me { grid-column: 2; display: grid; gap: clamp(14px, 2.2vh, 22px); }
 .me > * { margin: 0; }
 
 .kicker {
@@ -137,7 +140,7 @@ h1 .role {
 
 /* Narrow screens stack the columns. */
 @media (max-width: 820px) {
-  main { grid-template-columns: minmax(0, 1fr); align-content: center; gap: clamp(48px, 8vh, 72px); }
+  main { grid-template-columns: minmax(0, 36rem); justify-content: start; align-content: center; gap: clamp(48px, 8vh, 72px); }
   .you, .me { grid-column: 1; }
 }
 
