@@ -1,0 +1,94 @@
+/* The fork: two situation cards, each a problem (red cross) and what the
+   visitor wants (green tick). Each card has its own hue, green for the
+   product track and lake blue for integrations, which the answer picks up. */
+.fork {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+/* Top-aligned, not centred: nothing should jump when the cards fold away
+   and the answer takes their place. Spacing is margins, not grid gap, so a
+   folded (zero-height) row leaves no gap behind. */
+.fork-body {
+  --choice-gap: clamp(20px, 3vw, 40px);
+  align-self: start;
+  display: grid;
+  padding-top: clamp(28px, 9vh, 112px);
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--choice-gap);
+}
+
+[data-choose="a"] { --hue: var(--bud); }
+[data-choose="b"] { --hue: var(--lake); }
+
+.choose {
+  display: block;
+  padding: clamp(26px, 3.2vw, 48px);
+  border: 1px solid color-mix(in srgb, var(--hue) 34%, transparent);
+  border-top: 3px solid var(--hue);
+  border-radius: 20px;
+  background:
+    linear-gradient(160deg, color-mix(in srgb, var(--hue) 14%, transparent), color-mix(in srgb, var(--hue) 3%, transparent) 70%),
+    color-mix(in srgb, var(--leaf) 74%, transparent);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.3s ease, opacity 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.choose:hover {
+  border-color: color-mix(in srgb, var(--hue) 70%, transparent);
+  border-top-color: var(--hue);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -24px color-mix(in srgb, var(--hue) 55%, transparent);
+}
+.choose:focus-visible { outline-color: var(--hue); outline-offset: 4px; border-radius: 20px; }
+
+.checks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(18px, 3vh, 28px);
+  font-size: clamp(1.25rem, 1.85vw, 1.7rem);
+  line-height: 1.22;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+.checks li { display: grid; grid-template-columns: 1.15em minmax(0, 1fr); gap: 0.55em; align-items: start; }
+.checks .problem { color: color-mix(in srgb, var(--text) 78%, var(--leaf)); }
+.checks .want { font-weight: 500; }
+
+/* The cross draws first ("oh no"), then the tick answers it. */
+.mark { width: 1.15em; height: 1.15em; margin-top: 0.02em; overflow: visible; }
+.mark path {
+  fill: none;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 36;
+  stroke-dashoffset: 36;
+  animation: draw 0.5s cubic-bezier(.4, .7, .3, 1) forwards;
+  animation-delay: calc(200ms + var(--i) * 550ms);
+}
+.problem .mark path { stroke: var(--berry); }
+.want .mark path { stroke: var(--bud); }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+@media (max-width: 820px) {
+  .choices { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .choose { transition: none; }
+  .choose:hover { transform: none; }
+  .mark path { animation: none; stroke-dashoffset: 0; }
+}

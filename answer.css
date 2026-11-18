@@ -1,0 +1,50 @@
+/* The answer: hidden until the visitor picks a card. The cards then fold
+   away (fold.css) and the answer rises into the space they left.
+   Switching tracks replays the rise. */
+.answer {
+  display: none;
+  max-width: 50rem;
+  gap: clamp(16px, 2.6vh, 24px);
+  margin-top: clamp(40px, 8vh, 88px);
+  padding-bottom: clamp(32px, 6vh, 72px);
+}
+[data-track] .answer { display: grid; }
+/* Always green: the card hues only tell the options apart, and once the
+   cards have folded away there is no blue left for the answer to echo. */
+.answer { --hue: var(--bud); }
+.answer:focus { outline: none; }
+.answer > * { margin: 0; }
+
+.answer .kicker { color: var(--hue); }
+
+.track { display: none; gap: clamp(14px, 2.2vh, 22px); }
+[data-track="a"] .track[data-for="a"],
+[data-track="b"] .track[data-for="b"] {
+  display: grid;
+  animation: rise 0.7s cubic-bezier(.2, .7, .2, 1) 0.15s both;
+}
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } }
+
+.track h2 {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(2.3rem, 5vw, 4.4rem);
+  line-height: 1.03;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.body {
+  margin: 0;
+  font-size: clamp(1.02rem, 1.3vw, 1.18rem);
+  line-height: 1.6;
+  color: var(--muted);
+  text-wrap: pretty;
+  max-width: 42rem;
+}
+
+.answer .links { padding-top: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .track { animation: none !important; }
+}

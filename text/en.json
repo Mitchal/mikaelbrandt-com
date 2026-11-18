@@ -1,0 +1,16 @@
+{
+  "description": "Mikael Brandt, experienced programmer. Peace of mind for products built with AI, and lower AI costs for businesses that run their workflows on agents.",
+  "role": "Experienced programmer",
+  "fork_kicker": "Your situation",
+  "a_problem": "AI agents built most of your product.",
+  "a_want": "You want to feel confident your foundations will hold as you grow.",
+  "b_problem": "Agents connect your CRM, ERP and reports, and the AI bill grows every month.",
+  "b_want": "You want lower AI costs without having to learn yet another system.",
+  "get_kicker": "My offer",
+  "a_get_title": "Peace of mind as you grow.",
+  "a_get_body": "I dig deep into your code, architecture and operations and make sure what the agents built holds up, not just for the next demo but for your real-world requirements over time. Your team keeps shipping with agents, on foundations you can trust.",
+  "b_get_title": "Same workflows. A fraction of the AI bill.",
+  "b_get_body": "I map what your agents do over and over again and build it into custom code. AI is used only where real judgement is needed. Your workflows do the same job as today, only cheaper, faster and with the same result every time. And there's nothing new for you to learn.",
+  "contact_label": "Contact",
+  "email": "mikael@mikaelbrandt.com"
+}

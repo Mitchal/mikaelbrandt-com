@@ -4,36 +4,64 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mikael Brandt</title>
-<meta name="description" content="Mikael Brandt. Technical advisor to early-stage startups, one day a week.">
+<meta name="description" content="Mikael Brandt, experienced programmer. Peace of mind for products built with AI, and lower AI costs for businesses that run their workflows on agents.">
 <meta name="theme-color" content="#0b1a10">
+<link rel="alternate" hreflang="en" href="https://mikaelbrandt.com/">
+<link rel="alternate" hreflang="sv" href="https://mikaelbrandt.se/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;1,400;1,500&display=swap">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="fork.css">
+<link rel="stylesheet" href="fold.css">
+<link rel="stylesheet" href="answer.css">
 </head>
 <body>
 <canvas id="rings" aria-hidden="true"></canvas>
-<main>
-  <section class="you" aria-labelledby="you-title">
-    <h2 class="kicker" id="you-title">Is this you?</h2>
-    <ul class="checks">
-      <li style="--i: 0"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 5.5"/></svg><span>AI agents built most of your product.</span></li>
-      <li style="--i: 1"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 5.5"/></svg><span>You want to know your foundations will hold as you grow.</span></li>
-      <li style="--i: 2"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 5.5"/></svg><span>You want <span class="nowrap">battle-scarred</span> experience, just not five days a week.</span></li>
-    </ul>
-  </section>
-  <section class="me" aria-labelledby="me-title">
-    <h2 class="kicker" id="me-title">This is me.</h2>
-    <h1>Mikael Brandt <span class="role">Technical advisor</span></h1>
-    <p class="body">I join early-stage startups one day a week. You get senior engineering depth without a full-time hire, and your team keeps shipping with agents. I dig deep into your technical setup and help you make sure it holds up, not just for the next demo but for your real-world requirements over time.</p>
-    <p class="offer">One day a week <span aria-hidden="true">·</span> €4,500 a month, ex. VAT</p>
-    <nav class="links" aria-label="Contact">
-      <a class="link" href="mailto:mikael@mikaelbrandt.com">mikael@mikaelbrandt.com</a>
-      <a class="link" href="https://www.linkedin.com/in/mikael-brandt/" rel="me">LinkedIn</a>
-    </nav>
-  </section>
-</main>
+<section class="fork" aria-labelledby="fork-title">
+  <h1 class="site-head"><a href="./">Mikael Brandt</a> <span class="role">Experienced programmer</span></h1>
+  <div class="fork-body">
+    <h2 class="kicker" id="fork-title">Your situation</h2>
+    <a class="picked" href="./">
+      <svg class="picked-tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 5.5"/></svg>
+      <span class="picked-text" data-for="a">You want to feel confident your foundations will hold as you grow.</span>
+      <span class="picked-text" data-for="b">You want lower AI costs without having to learn yet another system.</span>
+    </a>
+    <div class="fold" id="choices">
+    <div class="choices">
+      <a class="choose" href="product/" data-choose="a">
+        <ul class="checks">
+          <li class="problem" style="--i: 0"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>AI agents built most of your product.</span></li>
+          <li class="want" style="--i: 1"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 5.5"/></svg><span>You want to feel confident your foundations will hold as you grow.</span></li>
+        </ul>
+      </a>
+      <a class="choose" href="integrations/" data-choose="b">
+        <ul class="checks">
+          <li class="problem" style="--i: 0"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Agents connect your CRM, ERP and reports, and the AI bill grows every month.</span></li>
+          <li class="want" style="--i: 1"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 5.5"/></svg><span>You want lower AI costs without having to learn yet another system.</span></li>
+        </ul>
+      </a>
+    </div>
+    </div>
+    <section class="answer" id="answer" tabindex="-1" aria-labelledby="answer-title">
+      <p class="kicker" id="answer-title">My offer</p>
+      <article class="track" data-for="a">
+        <h2>Peace of mind as you grow.</h2>
+        <p class="body">I dig deep into your code, architecture and operations and make sure what the agents built holds up, not just for the next demo but for your real-world requirements over time. Your team keeps shipping with agents, on foundations you can trust.</p>
+      </article>
+      <article class="track" data-for="b">
+        <h2>Same workflows. A fraction of the AI bill.</h2>
+        <p class="body">I map what your agents do over and over again and build it into custom code. AI is used only where real judgement is needed. Your workflows do the same job as today, only cheaper, faster and with the same result every time. And there's nothing new for you to learn.</p>
+      </article>
+      <nav class="links" aria-label="Contact">
+        <a class="link" href="mailto:mikael@mikaelbrandt.com">mikael@mikaelbrandt.com</a>
+        <a class="link" href="https://www.linkedin.com/in/mikael-brandt/" rel="me">LinkedIn</a>
+      </nav>
+    </section>
+  </div>
+</section>
 <script src="rings.js"></script>
+<script type="module" src="tracks.js"></script>
 </body>
 </html>

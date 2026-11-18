@@ -1,0 +1,86 @@
+/* Forest-floor green with tree rings growing behind. The page is a fork on
+   top (fork.css) and the answer to the visitor's choice below (answer.css). */
+:root {
+  --leaf: #0b1a10;        /* base: forest floor under spruce */
+  --leaf-deep: #050e08;   /* latewood, the darker bands */
+  --sap: #a9c48f;         /* light ring lines */
+  --bud: #c4d896;         /* new growth: the product track, and "yes" ticks */
+  --lake: #9ccbe0;        /* forest lake: the integrations track */
+  --berry: #ec8670;       /* lingonberry: the "oh no" crosses */
+  --text: #e7eedc;        /* underside of a leaf */
+  --muted: #93ad88;
+  --face: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --pad-y: max(clamp(32px, 6vh, 72px), env(safe-area-inset-top, 0px));
+  --pad-x: max(clamp(20px, 6vw, 88px), env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+  color-scheme: dark;
+}
+
+html, body { min-height: 100%; }
+/* Keep room for the scrollbar always, so the page does not shift sideways
+   when the fold briefly makes it taller than the window. */
+html { scrollbar-gutter: stable; }
+
+body {
+  margin: 0;
+  background: var(--leaf);
+  color: var(--text);
+  font-family: var(--face);
+  -webkit-font-smoothing: antialiased;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.fork { position: relative; box-sizing: border-box; padding: var(--pad-y) var(--pad-x); }
+
+.site-head {
+  margin: 0;
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  font-weight: 500;
+}
+.site-head a { color: inherit; text-decoration: none; }
+.role { font-style: italic; font-weight: 400; color: var(--muted); margin-left: 0.3em; }
+
+.kicker {
+  margin: 0;
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px clamp(24px, 3vw, 40px);
+}
+
+.link {
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  color: var(--text);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding-block: 4px;
+}
+.link::before {
+  content: "";
+  width: 0.55em;
+  height: 0.55em;
+  border-radius: 50%;
+  background: var(--hue, var(--bud));
+  transition: transform 0.4s ease;
+}
+.link:hover::before { transform: scale(1.5); }
+a:focus-visible { outline: 2px solid var(--bud); outline-offset: 6px; border-radius: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .link::before { transition: none; }
+}

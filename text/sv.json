@@ -1,0 +1,16 @@
+{
+  "description": "Mikael Brandt, erfaren programmerare. Trygghet för produkter byggda med AI, och lägre AI-kostnader för verksamheter som kör sina flöden med agenter.",
+  "role": "Erfaren programmerare",
+  "fork_kicker": "Din situation",
+  "a_problem": "AI-agenter har byggt det mesta av din produkt.",
+  "a_want": "Du vill känna dig trygg med att grunden håller när ni växer.",
+  "b_problem": "Agenter kopplar ihop ditt CRM, affärssystem och dina rapporter, och AI-notan växer varje månad.",
+  "b_want": "Du vill ha lägre AI-kostnader utan att behöva sätta dig in i ännu ett system.",
+  "get_kicker": "Mitt erbjudande",
+  "a_get_title": "Sinnesro när ni växer.",
+  "a_get_body": "Jag går på djupet i er kod, arkitektur och drift och ser till att det agenterna har byggt håller, inte bara inför nästa demo utan mot verklighetens krav över tid. Ditt team fortsätter att leverera med agenter, på en grund ni kan lita på.",
+  "b_get_title": "Samma flöden. En bråkdel av AI-notan.",
+  "b_get_body": "Jag kartlägger vad era agenter gör om och om igen och bygger in det i skräddarsydd kod. AI används bara där det faktiskt krävs omdöme. Flödena gör samma jobb som i dag, men billigare, snabbare och med samma resultat varje gång. Och du behöver inte lära dig något nytt.",
+  "contact_label": "Kontakt",
+  "email": "mikael@mikaelbrandt.se"
+}

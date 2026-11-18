@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="{{lang}}"{{track_attr}}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mikael Brandt</title>
+<meta name="description" content="{{description}}">
+<meta name="theme-color" content="#0b1a10">
+{{alternates}}
+<link rel="icon" href="{{root}}favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;1,400;1,500&display=swap">
+<link rel="stylesheet" href="{{root}}base.css">
+<link rel="stylesheet" href="{{root}}fork.css">
+<link rel="stylesheet" href="{{root}}fold.css">
+<link rel="stylesheet" href="{{root}}answer.css">
+</head>
+<body>
+<canvas id="rings" aria-hidden="true"></canvas>
+<section class="fork" aria-labelledby="fork-title">
+  <h1 class="site-head"><a href="{{home}}">Mikael Brandt</a> <span class="role">{{role}}</span></h1>
+  <div class="fork-body">
+    <h2 class="kicker" id="fork-title">{{fork_kicker}}</h2>
+    <a class="picked" href="{{home}}">
+      <svg class="picked-tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 5.5"/></svg>
+      <span class="picked-text" data-for="a">{{a_want}}</span>
+      <span class="picked-text" data-for="b">{{b_want}}</span>
+    </a>
+    <div class="fold" id="choices">
+    <div class="choices">
+      <a class="choose" href="{{href_a}}" data-choose="a">
+        <ul class="checks">
+          <li class="problem" style="--i: 0"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>{{a_problem}}</span></li>
+          <li class="want" style="--i: 1"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 5.5"/></svg><span>{{a_want}}</span></li>
+        </ul>
+      </a>
+      <a class="choose" href="{{href_b}}" data-choose="b">
+        <ul class="checks">
+          <li class="problem" style="--i: 0"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>{{b_problem}}</span></li>
+          <li class="want" style="--i: 1"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5l5.5 5.5L20.5 5.5"/></svg><span>{{b_want}}</span></li>
+        </ul>
+      </a>
+    </div>
+    </div>
+    <section class="answer" id="answer" tabindex="-1" aria-labelledby="answer-title">
+      <p class="kicker" id="answer-title">{{get_kicker}}</p>
+      <article class="track" data-for="a">
+        <h2>{{a_get_title}}</h2>
+        <p class="body">{{a_get_body}}</p>
+      </article>
+      <article class="track" data-for="b">
+        <h2>{{b_get_title}}</h2>
+        <p class="body">{{b_get_body}}</p>
+      </article>
+      <nav class="links" aria-label="{{contact_label}}">
+        <a class="link" href="mailto:{{email}}">{{email}}</a>
+        <a class="link" href="https://www.linkedin.com/in/mikael-brandt/" rel="me">LinkedIn</a>
+      </nav>
+    </section>
+  </div>
+</section>
+<script src="{{root}}rings.js"></script>
+<script type="module" src="{{root}}tracks.js"></script>
+</body>
+</html>

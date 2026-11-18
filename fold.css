@@ -1,0 +1,81 @@
+/* Once a card is picked, the cards fold away and only a single line is left
+   under the question: what the visitor said they want. The answer below
+   then has the stage. The line links back to the fork, which unfolds the
+   cards again and drops the answer. */
+.fold {
+  display: grid;
+  grid-template-rows: 1fr;
+  margin-top: clamp(20px, 3.5vh, 32px);
+  transition:
+    grid-template-rows 0.55s cubic-bezier(.4, 0, .2, 1),
+    margin-top 0.55s cubic-bezier(.4, 0, .2, 1),
+    opacity 0.35s ease;
+}
+/* Room inside the clip for the cards' hover lift, shadow and focus ring. */
+.fold > .choices { min-height: 0; overflow: hidden; padding: 16px; margin: -16px; }
+
+[data-track] .fold {
+  grid-template-rows: 0fr;
+  margin-top: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    grid-template-rows 0.55s cubic-bezier(.4, 0, .2, 1),
+    margin-top 0.55s cubic-bezier(.4, 0, .2, 1),
+    opacity 0.3s ease,
+    visibility 0s linear 0.55s;
+}
+
+/* The folded line: text only, the want of the picked card. */
+.picked {
+  display: none;
+  justify-self: start;
+  align-items: start;
+  gap: 0.5em;
+  margin-top: 12px;
+  padding-block: 4px;
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  font-weight: 500;              /* same type as the card's want line, so */
+  line-height: 1.22;             /* the flight (flight.js) lands seamlessly */
+  letter-spacing: -0.012em;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+}
+[data-track] .picked { display: inline-flex; }
+
+.picked-text { display: none; text-wrap: balance; }
+[data-track="a"] .picked-text[data-for="a"],
+[data-track="b"] .picked-text[data-for="b"] { display: inline; }
+
+.picked svg { flex: none; width: 1em; height: 1em; margin-top: 0.1em; overflow: visible; }
+.picked path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.picked-tick path { stroke: var(--bud); stroke-width: 2.6; }
+
+.picked:hover .picked-text {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--text) 35%, transparent);
+  text-underline-offset: 0.2em;
+}
+
+/* While the want line is in flight (flight.js): the copy that travels,
+   and its destination kept invisible until the copy lands on it. */
+.flyer {
+  position: absolute;
+  z-index: 10;
+  margin: 0;
+  pointer-events: none;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+svg.flyer { overflow: visible; }
+svg.flyer path { fill: none; stroke: var(--bud); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.landing { visibility: hidden; }
+.measuring .fold { transition: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fold, [data-track] .fold { transition: none; }
+}
