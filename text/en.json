@@ -11,6 +11,14 @@
   "a_get_body": "I dig deep into your code, architecture and operations and make sure what the agents built holds up, not just for the next demo but for your real-world requirements over time. Your team keeps shipping with agents, on foundations you can trust.",
   "b_get_title": "Same workflows. A fraction of the AI bill.",
   "b_get_body": "I map what your agents do over and over again and build it into custom code. AI is used only where real judgement is needed. Your workflows do the same job as today, only cheaper, faster and with the same result every time. And there's nothing new for you to learn.",
+  "contact_email_label": "Your email",
+  "contact_message_label": "What's going on?",
+  "contact_optional": "optional",
+  "contact_send": "Let's talk",
+  "contact_promise": "I reply personally within one working day, and only use your email for that.",
+  "contact_sending": "Sending…",
+  "contact_sent": "Thanks! I'll get back to you within one working day.",
+  "contact_failed": "That didn't go through. Please email me directly at mikael@mikaelbrandt.com instead.",
   "contact_label": "Contact",
   "email": "mikael@mikaelbrandt.com"
 }

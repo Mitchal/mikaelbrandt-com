@@ -11,6 +11,14 @@
   "a_get_body": "Jag går på djupet i er kod, arkitektur och drift och ser till att det agenterna har byggt håller, inte bara inför nästa demo utan mot verklighetens krav över tid. Ditt team fortsätter att leverera med agenter, på en grund ni kan lita på.",
   "b_get_title": "Samma flöden. En bråkdel av AI-notan.",
   "b_get_body": "Jag kartlägger vad era agenter gör om och om igen och bygger in det i skräddarsydd kod. AI används bara där det faktiskt krävs omdöme. Flödena gör samma jobb som i dag, men billigare, snabbare och med samma resultat varje gång. Och du behöver inte lära dig något nytt.",
+  "contact_email_label": "Din e-post",
+  "contact_message_label": "Hur ser det ut hos er?",
+  "contact_optional": "valfritt",
+  "contact_send": "Kontakta mig",
+  "contact_promise": "Jag svarar personligen inom en arbetsdag och använder din e-post bara till det.",
+  "contact_sending": "Skickar…",
+  "contact_sent": "Tack! Jag hör av mig inom en arbetsdag.",
+  "contact_failed": "Det gick inte att skicka. Mejla mig direkt på mikael@mikaelbrandt.se i stället.",
   "contact_label": "Kontakt",
   "email": "mikael@mikaelbrandt.se"
 }

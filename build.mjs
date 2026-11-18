@@ -15,7 +15,7 @@ const SITES = [
   { lang: "sv", url: "https://mikaelbrandt.se/", dir: "sv/", slugs: { a: "produkt", b: "integrationer" } },
 ];
 const TRACKS = ["", "a", "b"]; // "" is the fork with nothing picked yet
-const BUILT = ["lang", "track_attr", "alternates", "root", "home", "href_a", "href_b"];
+const BUILT = ["lang", "track", "track_attr", "alternates", "root", "home", "href_a", "href_b"];
 
 const template = readFileSync("page.html", "utf8");
 const used = new Set([...template.matchAll(/\{\{(\w+)\}\}/g)].map((m) => m[1]));
@@ -34,6 +34,7 @@ function render(site, text, track) {
   const values = {
     ...text,
     lang: site.lang,
+    track,
     track_attr: track ? ` data-track="${track}"` : "",
     alternates: alternates(track),
     root: up(depth(site.dir) + pageUp),

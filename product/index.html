@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="../fork.css">
 <link rel="stylesheet" href="../fold.css">
 <link rel="stylesheet" href="../answer.css">
+<link rel="stylesheet" href="../contact/contact.css">
 </head>
 <body>
 <canvas id="rings" aria-hidden="true"></canvas>
@@ -54,6 +55,26 @@
         <h2>Same workflows. A fraction of the AI bill.</h2>
         <p class="body">I map what your agents do over and over again and build it into custom code. AI is used only where real judgement is needed. Your workflows do the same job as today, only cheaper, faster and with the same result every time. And there's nothing new for you to learn.</p>
       </article>
+      <form class="contact" action="https://mikaelbrandt-contact.mikael-brandt90.workers.dev/" method="post"
+            data-sending="Sending…" data-sent="Thanks! I'll get back to you within one working day." data-failed="That didn't go through. Please email me directly at mikael@mikaelbrandt.com instead.">
+        <input type="hidden" name="offer" value="a">
+        <input type="hidden" name="lang" value="en">
+        <input type="hidden" name="page" value="">
+        <label class="field">
+          <span class="field-label">Your email</span>
+          <input type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email">
+        </label>
+        <label class="field">
+          <span class="field-label">What's going on? <em>optional</em></span>
+          <textarea name="message" rows="4" maxlength="5000"></textarea>
+        </label>
+        <label class="trap" aria-hidden="true">Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        <div class="send">
+          <button type="submit">Let's talk</button>
+          <p class="promise">I reply personally within one working day, and only use your email for that.</p>
+        </div>
+        <p class="contact-status" role="status" tabindex="-1"></p>
+      </form>
       <nav class="links" aria-label="Contact">
         <a class="link" href="mailto:mikael@mikaelbrandt.com">mikael@mikaelbrandt.com</a>
         <a class="link" href="https://www.linkedin.com/in/mikael-brandt/" rel="me">LinkedIn</a>
@@ -63,5 +84,6 @@
 </section>
 <script src="../rings.js"></script>
 <script type="module" src="../tracks.js"></script>
+<script type="module" src="../contact/contact.js"></script>
 </body>
 </html>

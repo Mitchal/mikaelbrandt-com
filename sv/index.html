@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="../fork.css">
 <link rel="stylesheet" href="../fold.css">
 <link rel="stylesheet" href="../answer.css">
+<link rel="stylesheet" href="../contact/contact.css">
 </head>
 <body>
 <canvas id="rings" aria-hidden="true"></canvas>
@@ -54,6 +55,26 @@
         <h2>Samma flöden. En bråkdel av AI-notan.</h2>
         <p class="body">Jag kartlägger vad era agenter gör om och om igen och bygger in det i skräddarsydd kod. AI används bara där det faktiskt krävs omdöme. Flödena gör samma jobb som i dag, men billigare, snabbare och med samma resultat varje gång. Och du behöver inte lära dig något nytt.</p>
       </article>
+      <form class="contact" action="https://mikaelbrandt-contact.mikael-brandt90.workers.dev/" method="post"
+            data-sending="Skickar…" data-sent="Tack! Jag hör av mig inom en arbetsdag." data-failed="Det gick inte att skicka. Mejla mig direkt på mikael@mikaelbrandt.se i stället.">
+        <input type="hidden" name="offer" value="">
+        <input type="hidden" name="lang" value="sv">
+        <input type="hidden" name="page" value="">
+        <label class="field">
+          <span class="field-label">Din e-post</span>
+          <input type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email">
+        </label>
+        <label class="field">
+          <span class="field-label">Hur ser det ut hos er? <em>valfritt</em></span>
+          <textarea name="message" rows="4" maxlength="5000"></textarea>
+        </label>
+        <label class="trap" aria-hidden="true">Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        <div class="send">
+          <button type="submit">Kontakta mig</button>
+          <p class="promise">Jag svarar personligen inom en arbetsdag och använder din e-post bara till det.</p>
+        </div>
+        <p class="contact-status" role="status" tabindex="-1"></p>
+      </form>
       <nav class="links" aria-label="Kontakt">
         <a class="link" href="mailto:mikael@mikaelbrandt.se">mikael@mikaelbrandt.se</a>
         <a class="link" href="https://www.linkedin.com/in/mikael-brandt/" rel="me">LinkedIn</a>
@@ -63,5 +84,6 @@
 </section>
 <script src="../rings.js"></script>
 <script type="module" src="../tracks.js"></script>
+<script type="module" src="../contact/contact.js"></script>
 </body>
 </html>

@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="{{root}}fork.css">
 <link rel="stylesheet" href="{{root}}fold.css">
 <link rel="stylesheet" href="{{root}}answer.css">
+<link rel="stylesheet" href="{{root}}contact/contact.css">
 </head>
 <body>
 <canvas id="rings" aria-hidden="true"></canvas>
@@ -53,6 +54,26 @@
         <h2>{{b_get_title}}</h2>
         <p class="body">{{b_get_body}}</p>
       </article>
+      <form class="contact" action="https://mikaelbrandt-contact.mikael-brandt90.workers.dev/" method="post"
+            data-sending="{{contact_sending}}" data-sent="{{contact_sent}}" data-failed="{{contact_failed}}">
+        <input type="hidden" name="offer" value="{{track}}">
+        <input type="hidden" name="lang" value="{{lang}}">
+        <input type="hidden" name="page" value="">
+        <label class="field">
+          <span class="field-label">{{contact_email_label}}</span>
+          <input type="email" name="email" required maxlength="254" autocomplete="email" inputmode="email">
+        </label>
+        <label class="field">
+          <span class="field-label">{{contact_message_label}} <em>{{contact_optional}}</em></span>
+          <textarea name="message" rows="4" maxlength="5000"></textarea>
+        </label>
+        <label class="trap" aria-hidden="true">Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        <div class="send">
+          <button type="submit">{{contact_send}}</button>
+          <p class="promise">{{contact_promise}}</p>
+        </div>
+        <p class="contact-status" role="status" tabindex="-1"></p>
+      </form>
       <nav class="links" aria-label="{{contact_label}}">
         <a class="link" href="mailto:{{email}}">{{email}}</a>
         <a class="link" href="https://www.linkedin.com/in/mikael-brandt/" rel="me">LinkedIn</a>
@@ -62,5 +83,6 @@
 </section>
 <script src="{{root}}rings.js"></script>
 <script type="module" src="{{root}}tracks.js"></script>
+<script type="module" src="{{root}}contact/contact.js"></script>
 </body>
 </html>
