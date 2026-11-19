@@ -15,7 +15,7 @@ const SITES = [
   { lang: "sv", url: "https://mikaelbrandt.se/", dir: "sv/", slugs: { a: "produkt", b: "integrationer" } },
 ];
 const TRACKS = ["", "a", "b"]; // "" is the fork with nothing picked yet
-const BUILT = ["lang", "track", "track_attr", "alternates", "root", "home", "href_a", "href_b"];
+const BUILT = ["lang", "track", "track_attr", "canonical", "alternates", "root", "home", "href_a", "href_b"];
 
 const template = readFileSync("page.html", "utf8");
 const used = new Set([...template.matchAll(/\{\{(\w+)\}\}/g)].map((m) => m[1]));
@@ -36,6 +36,9 @@ function render(site, text, track) {
     lang: site.lang,
     track,
     track_attr: track ? ` data-track="${track}"` : "",
+    // Each page's own domain: the Swedish pages are also reachable under
+    // mikaelbrandt.com/sv/, and this tells search engines to show the .se one.
+    canonical: `${site.url}${slugOf(site, track)}`,
     alternates: alternates(track),
     root: up(depth(site.dir) + pageUp),
     home: up(pageUp) || "./",
