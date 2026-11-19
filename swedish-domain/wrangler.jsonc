@@ -1,0 +1,14 @@
+// Serves the Swedish site on mikaelbrandt.se. Deploy from this folder: npm run deploy
+// Custom domains make Wrangler create the DNS records and certificates itself.
+{
+  "$schema": "https://unpkg.com/wrangler@4.164.0/config-schema.json",
+  "name": "mikaelbrandt-se",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": false,
+  "routes": [
+    { "pattern": "mikaelbrandt.se", "custom_domain": true },
+    { "pattern": "www.mikaelbrandt.se", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+}
