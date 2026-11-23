@@ -43,6 +43,28 @@
   max-width: 42rem;
 }
 
+/* The offer in my own words, then the concrete first step. */
+.aside {
+  margin: 0;
+  font-size: clamp(1.02rem, 1.3vw, 1.18rem);
+  line-height: 1.6;
+  font-style: italic;
+  color: color-mix(in srgb, var(--text) 86%, var(--leaf));
+  text-wrap: pretty;
+  max-width: 42rem;
+  padding-left: 1em;
+  border-left: 2px solid color-mix(in srgb, var(--hue) 60%, transparent);
+}
+.step {
+  margin: 0;
+  font-size: clamp(1.02rem, 1.3vw, 1.18rem);
+  line-height: 1.6;
+  font-weight: 500;
+  color: var(--text);
+  text-wrap: pretty;
+  max-width: 42rem;
+}
+
 .answer .links { padding-top: 4px; }
 
 @media (prefers-reduced-motion: reduce) {

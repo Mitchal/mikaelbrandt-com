@@ -21,7 +21,10 @@
 <body>
 <canvas id="rings" aria-hidden="true"></canvas>
 <section class="fork" aria-labelledby="fork-title">
-  <h1 class="site-head"><a href="{{home}}">Mikael Brandt</a> <span class="role">{{role}}</span></h1>
+  <header class="masthead">
+    <h1 class="site-head"><a href="{{home}}">Mikael Brandt</a> <span class="role">{{role}}</span></h1>
+    <p class="employers">{{employers}}</p>
+  </header>
   <div class="fork-body">
     <h2 class="kicker" id="fork-title">{{fork_kicker}}</h2>
     <a class="picked" href="{{home}}">
@@ -50,10 +53,14 @@
       <article class="track" data-for="a">
         <h2>{{a_get_title}}</h2>
         <p class="body">{{a_get_body}}</p>
+        <p class="aside">{{a_get_aside}}</p>
+        <p class="step">{{a_get_step}}</p>
       </article>
       <article class="track" data-for="b">
         <h2>{{b_get_title}}</h2>
         <p class="body">{{b_get_body}}</p>
+        <p class="aside">{{b_get_aside}}</p>
+        <p class="step">{{b_get_step}}</p>
       </article>
       <form class="contact" action="https://mikaelbrandt-contact.mikael-brandt90.workers.dev/" method="post"
             data-sending="{{contact_sending}}" data-sent="{{contact_sent}}" data-failed="{{contact_failed}}">
